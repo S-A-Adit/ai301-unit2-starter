@@ -23,10 +23,13 @@ import hashlib
 import concurrent.futures
 import json
 import re
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+
+CLAUDE_BIN = shutil.which("claude") or "claude"
 
 HERE = Path(__file__).resolve().parent
 MODEL = "sonnet"
@@ -66,12 +69,13 @@ def grade_one(item_id: str, bundle_path: Path, skill: str, rubric: str,
     prompt = PROMPT_TEMPLATE.format(
         skill=skill, rubric=rubric, evidence=evidence, item_id=item_id,
         bundle=bundle_path.read_text(encoding="utf-8"))
-    cmd = ["claude", "-p", "--model", MODEL]
+    cmd = [CLAUDE_BIN, "-p", "--model", MODEL]
     last_err = "no attempt"
     for _ in range(2):                       # one retry on bad output
         try:
             proc = subprocess.run(cmd, input=prompt, capture_output=True,
-                                  text=True, timeout=timeout)
+                                  text=True, encoding="utf-8",
+                                  errors="replace", timeout=timeout)
         except subprocess.TimeoutExpired:
             last_err = f"timed out after {timeout}s"
             continue

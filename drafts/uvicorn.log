@@ -1,0 +1,21 @@
+INFO:     Started server process [21900]
+INFO:     Waiting for application startup.
+2026-09-26 19:51:40,983 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+2026-09-26 19:51:40,983 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-09-26 19:51:41,013 INFO sqlalchemy.engine.Engine select current_schema()
+2026-09-26 19:51:41,013 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-09-26 19:51:41,016 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+2026-09-26 19:51:41,016 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-09-26 19:51:41,017 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-09-26 19:51:41,019 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname IN ($7::VARCHAR, $8::VARCHAR, $9::VARCHAR, $10::VARCHAR) AND pg_catalog.pg_class.relkind = ANY (ARRAY[$1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $6::VARCHAR
+2026-09-26 19:51:41,020 INFO sqlalchemy.engine.Engine [generated in 0.00070s] ('r', 'p', 'f', 'v', 'm', 'pg_catalog', 'ingested_sources', 'profiles', 'reviews', 'users')
+2026-09-26 19:51:41,054 INFO sqlalchemy.engine.Engine COMMIT
+2026-09-26 19:51:41 [info     ] application_startup_completed
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-09-26 19:51:45 [error    ] postgres_health_check_failed   error="Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')" request_id=99637710-5ac9-4ca8-92ee-1084842d20c1
+2026-09-26 19:51:45 [error    ] redis_health_check_failed      error="'Settings' object has no attribute 'redis_host'" request_id=99637710-5ac9-4ca8-92ee-1084842d20c1
+2026-09-26 19:51:45 [debug    ] vector_db_health_check_passed  request_id=99637710-5ac9-4ca8-92ee-1084842d20c1
+INFO:     127.0.0.1:54327 - "GET /health HTTP/1.1" 503 Service Unavailable

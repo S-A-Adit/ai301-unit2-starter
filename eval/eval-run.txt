@@ -1,0 +1,54 @@
+# eval run written by run_eval.py at 2026-09-26T03:25:51Z
+# model: sonnet (pinned)
+# graded: C:\Users\Acer\.claude\skills\repro-check
+# packages: 20 scored
+#   rubric.md  sha256:b4d54a40d5852c47
+#   evidence-guide.md  sha256:a003ef62f1aaebbc
+#   SKILL.md  sha256:f1b0abceef33d418
+#
+grading 20 package(s) with rubric.md + evidence-guide.md, model sonnet, 5 worker(s)...
+  pkg-04: reject
+  pkg-03: accept
+  pkg-01: accept
+  pkg-02: reject
+  pkg-07: accept
+  pkg-08: reject
+  pkg-05: accept
+  pkg-09: accept
+  pkg-06: reject
+  pkg-10: accept
+  pkg-13: reject
+  pkg-11: accept
+  pkg-12: accept
+  pkg-14: reject
+  pkg-15: reject
+  pkg-16: reject
+  pkg-19: reject
+  pkg-18: reject
+  pkg-17: reject
+  pkg-20: reject
+
+item    gold    verdict  agree  note
+pkg-01  accept  accept   yes    
+pkg-02  reject  reject   yes    
+pkg-03  accept  accept   yes    
+pkg-04  reject  reject   yes    
+pkg-05  accept  accept   yes    
+pkg-06  reject  reject   yes    
+pkg-07  accept  accept   yes    
+pkg-08  reject  reject   yes    
+pkg-09  accept  accept   yes    
+pkg-10  accept  accept   yes    
+pkg-11  accept  accept   yes    
+pkg-12  accept  accept   yes    
+pkg-13  reject  reject   yes    
+pkg-14  reject  reject   yes    
+pkg-15  reject  reject   yes    
+pkg-16  reject  reject   yes    
+pkg-17  reject  reject   yes    
+pkg-18  reject  reject   yes    
+pkg-19  reject  reject   yes    
+pkg-20  reject  reject   yes    
+
+categories: clear-accept 8/8  disclosure 1/1  no-evidence 4/4  unfollowable-comms 3/3  wrong-target 4/4
+agreement: 20/20 scored items  (bar: 18/20: PASS)
